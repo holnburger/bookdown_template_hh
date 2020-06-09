@@ -1,0 +1,36 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{blindtext}
+\usepackage{csquotes}
+\usepackage{booktabs}
+\usepackage{appendix}
+\usepackage{array}
+\usepackage{setspace}
+\usepackage{mathpazo}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{etoolbox}
+\usepackage{pdfpages}
+\usepackage{subcaption}
+\usepackage{chngcntr}
+\usepackage[labelfont=bf]{caption}
+\usepackage{float}
+
+% Layoutanpassungen
+\counterwithout{footnote}{chapter}
+\setkomafont{sectioning}{\normalcolor\bfseries}
+\renewcommand*{\chapterheadstartvskip}{\vspace*{-\topskip}}
+\KOMAoptions{headsepline = true}
+\setlength{\textheight}{1.05\textheight}
+\AtBeginEnvironment{quote}{\singlespacing\small}
+\makeatletter
+% Keine Seitenvorschübe bei \Chapter
+\newcommand\Chapter{%
+                    \par\vspace{1.5cm}% anpassen
+                    \global\@topnum\z@
+                    \@afterindentfalse
+                    \secdef\@chapter\@schapter}
+\makeatother
+
+\AtBeginDocument{\let\maketitle\relax}
